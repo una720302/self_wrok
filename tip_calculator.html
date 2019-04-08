@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script src="tip_calculator.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Tip Calculator</title>
 </head>
@@ -11,37 +12,37 @@
         <div style="">
             <div>
                 <label style="padding-left: 5px;"><strong>How much was your bill?</strong></label><br>
-                <div style="padding-left: 15px;">
-                    $<input type="email" placeholder="Bill Amount">
+                <div style="padding-left: 35px;">
+                    $<input id="bill_amount" style="padding-left: 15px;" type="number" placeholder="Bill Amount">
                 </div>
             </div>
             <div class="form-group" >
-                <label style="padding-left: 5px;"><strong>How was your service?</strong></label>
+                <label style="padding-left: 5px;"><strong>How would you like to tip?</strong></label>
                 <div style="padding-left: 20px;">
                     <!-- Checkboxes -->
                     <div class="form-check form-check">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="1">
-                        <label class="form-check-label">1</label>
+                        <input class="form-check-input" type="checkbox" id="tip_one" value="1">
+                        <label class="form-check-label">10%</label>
                     </div>
 
                     <div class="form-check form-check">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="2">
-                        <label class="form-check-label">2</label>
+                        <input class="form-check-input" type="checkbox" id="tip_two" value="2">
+                        <label class="form-check-label">15%</label>
                     </div>
 
                     <div class="form-check form-check">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="3">
-                        <label class="form-check-label">3</label>
+                        <input class="form-check-input" type="checkbox" id="tip_three" value="3">
+                        <label class="form-check-label">20%</label>
                     </div>
 
                     <div class="form-check form-check">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="4">
-                        <label class="form-check-label">4</label>
+                        <input class="form-check-input" type="checkbox" id="tip_four" value="4">
+                        <label class="form-check-label">25%</label>
                     </div>
 
                     <div class="form-check form-check">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="5">
-                        <label class="form-check-label">5</label>
+                        <input class="form-check-input" type="checkbox" id="tip_five" value="5">
+                        <label class="form-check-label">30%</label>
                     </div>
                 </div>
             </div>
@@ -50,14 +51,17 @@
                 <label style="padding-left: 5px;"><strong>How many people are sharing the bill?</strong></label><br>
 
                 <div style="padding: 10px;">
-                    <input type="email" placeholder="Number of People">people
+                    <input type="number" placeholder="Number of People" style="padding-left: 15px;"><i>people</i>
                 </div>
             </div>
             <br>
             <div style="padding-left: 5px; float: right;">
-                <button type="submit" class="btn btn-default">Submit</button>
+                <button type="submit" class="btn btn-default" onclick="calculate_bill_amount_plus_tip()">Submit</button>
             </div>
         </div>
     </form>
+    <p>
+        Details: <span id="display_details"></span>
+    </p>
 </body>
 </html>
